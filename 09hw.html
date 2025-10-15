@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威力彩作業</title>
+</head>
+
+<body>
+    <script>
+        // 作業
+
+        // 用上面練習完成的 function 製作威力彩號碼產生器
+        // 將隨機出的數字用 document.write() 顯示在網頁上
+        // 威力彩規則
+
+        // A 區 1~38 取 6 個數字
+        // B 區 1~8 取 1 個數字
+
+
+        // const rand = () => {
+        // 程式碼...
+        // }
+
+
+        const rand = () => {
+            let aArry = [];
+            for (let i = 0; aArry.length < 6; i++) {
+                let a = Math.floor(Math.random() * 38) + 1; // 產生 1 ~ 38 的隨機數字
+
+                if (!aArry.includes(a)) {
+                    aArry.push(a); // 如果沒有重複才加入
+                }
+            }
+
+            let b = Math.floor(Math.random() * 8 + 1)
+
+            return { aArry, b }
+        }
+        let result = rand();
+        document.write('A 區: ' + result.aArry + '<br>')
+        document.write('B 區: ' + result.b)
+
+
+    </script>
+</body>
+
+</html>
